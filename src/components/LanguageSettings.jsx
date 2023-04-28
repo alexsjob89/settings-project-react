@@ -21,24 +21,48 @@ const languages = [
  };
 
   return (
-    <div>
+    <div className='Languages' style={{
+      width: "35rem",
+      height: "17rem",
+      position: "relative",
+      top: "0",
+      right:"30px",
+      backgroundColor:"white",
+      borderRadius: "20px",
+      paddingLeft: "10px",
+      }}>
      <div>
-        <h2>Display Language</h2>
+        <h2 className='beta'>Display Language</h2>
+        <h3>Select the language you'd like to experience the interface in. Note that this won't change
+the language of user-generated content.</h3>
         <p>
           {languages.find((lang) => lang.code === preferences.language).name}
         </p>
-        <button onClick={() => setShowLanguageList(!showLanguageList)}>
+        <button style={{
+  border: "none",
+  background: "#263562",
+  color: "white",
+  borderRadius: "40px",
+  padding: "10px",
+  zIndex: "2"}} onClick={() => setShowLanguageList(!showLanguageList)}>
           Change Language
         </button>
         {showLanguageList && (
           <ul>
             {languages.map((language) => (
               <li key={language.code}>
-                <button
+                <button style={{
+
+  background: "white",
+  border:"1ps solid #263562",
+  color: "#263562",
+  borderRadius: "40px",
+  zIndex: "2",
+  padding: "6px"}}
                   onClick={() => handleLanguageChange(language.code)}
                   disabled={preferences.language === language.code}
                 >
-                  {language.name}
+                  <div>{language.name}</div>
                 </button>
               </li>
             ))}

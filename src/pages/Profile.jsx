@@ -45,7 +45,15 @@ const handleSubmit = (e) => {
 }
 
   return (
-    <div className='profile'>
+    <div className='profile' style={{
+
+      height: "25rem",
+      width: "25rem",
+      borderRadius:"20px",
+      backgroundColor: "white",
+      position:"absolute",
+      inset: "10rem 0 0 0",
+      margin: "auto"}}>
 <ProfileComponent
  firstName={firstName}
 lastName={lastName}

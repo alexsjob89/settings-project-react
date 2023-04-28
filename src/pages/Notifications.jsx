@@ -26,7 +26,14 @@ function Notifications() {
 
 
   return (
-    <div>
+    <div className='notification' style={{
+      backgroundColor: "white",
+      maxWidth:"max-content",
+      padding :"20px",
+      borderRadius: "20px",
+      margin:"auto",
+      marginTop:"3rem"
+      }}>
 
 <h1>Notifications</h1>
       {notifications.length > 0 ? (
@@ -34,7 +41,7 @@ function Notifications() {
           {notifications.map((notification) => (
             <li key={notification.id}>
               {notification.message}
-              <button
+              <button className='btn-Notif'
                 onClick={() => handleRemoveNotification(notification.id)}
               >
                 Remove

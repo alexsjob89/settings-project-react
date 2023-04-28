@@ -16,11 +16,24 @@ function ProfileComponent({
  setWarnings,
 }) {
   return (
-    <div>
-          <form onSubmit={handleSubmit}>
+    <div style={{
+      textAlign: "left",
+      marginTop: "1rem",
+      lineHeight: "1rem",
+      justifyContent: "space-around",
+      marginLeft: "1rem",
+
+      }} className='ProfileComponent'>
+
+          <form onSubmit={handleSubmit} style={{
+          display: "grid",
+
+          width: "22.7rem",
+          marginTop: "1rem",
+          height: "20rem"}}>
 
 <label>First Name:
-<input type="text"
+<input className='profile-input' type="text"
 name='firstName'
 value={firstName}
 onChange={(e) => setFirstName(e.target.value)}
@@ -30,7 +43,7 @@ required
 
 
 <label>Last Name:
-<input type="text"
+<input className='profile-input' type="text"
 name='lastName'
 value={lastName}
 onChange={(e) => setLastName(e.target.value)}
@@ -40,7 +53,7 @@ required
 
 
 <label>Email:
-<input type="email"
+<input className='profile-input' type="email"
 name='email'
 value={email}
 onChange={(e) => setEmail(e.target.value)}
@@ -50,7 +63,7 @@ required
 
 
 <label>Password:
-<input type="password"
+<input className='profile-input' type="password"
 name='password'
 value={password}
 onChange={(e) => setPassword(e.target.value)}
@@ -61,14 +74,19 @@ required
 
 <label>
 Confirm Password:
-<input
+<input className='profile-input'
 type="password"
 value={confirmPassword}
 onChange={(e) => setConfirmPassword(e.target.value)}
 required
 />
+
 </label>
-<button type='"submit'>Save changes</button>
+<button type='"submit' style={{
+  border: "none",
+  background: "#263562",
+  color: "white",
+  borderRadius: "40px"}}>Save changes</button>
 </form>
 {warnings.length > 0 && (
 <ul>
@@ -77,10 +95,12 @@ required
   color: "red",
   border: "0.5px solid red",
   width: "max-content",
+  fontSize: "15px",
   padding: "4px",
   borderRadius: "8px",
   backgroundColor: "rgba(245, 39, 39, 0.20)",
-  boxShadow: "0px 9px 20px -10px #940000"}}>
+  boxShadow: "0px 9px 20px -10px #940000",
+  marginRight: "2rem"}}>
  {warning}
 </li>
 ))}

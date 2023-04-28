@@ -23,7 +23,18 @@ function FeedSettings() {
 
 
   return (
-    <div>
+    <div className='feed' style={{
+      positions:"relative",
+      margin: "auto",
+      marginTop:"3rem",
+      display: "block",
+
+      width: "20rem",
+      height: "16rem",
+      borderRadius: "20px",
+      backgroundColor: "white",
+      padding: "20px"
+    }}>
       <h1>Feed Settings</h1>
       <h2>Categories</h2>
       <div>

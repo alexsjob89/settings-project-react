@@ -24,20 +24,32 @@ function AccountPrefferences() {
 
 
   return (
-    <div className='AccountPrefferences'>
+    <div className='AccountPrefferences' style={{
+
+      width: "35rem",
+      height: "20rem",
+      position: "relative",
+      top:"0",
+      paddingLeft: "20px",
+      borderRadius:"20px",
+      backgroundColor: "white"}}>
        <h2>ACCOUNT PREFFERENCES</h2>
     <div>
     <h2>Email Address</h2>
        <p>{email}</p>
-       <button onClick={() => setShowEmailInput(!showEmailInput)}>Change Email</button>
+       <button
+       className='btn' onClick={() => setShowEmailInput(!showEmailInput)}>Change Email</button>
        {showEmailInput && (
-        <div>
-        <input
+        <div style={{
+
+          width: "10rem",
+          position: "absolute"}}>
+        <input className='account-input'
         type="email"
         value={newEmail}
         onChange={(e) => setNewEmail(e.target.value)}
         placeholder='New Email' />
-        <button onClick={handleChangeEmail} disabled={!newEmail.trim()}>Save</button>
+        <button className='btn' onClick={handleChangeEmail} disabled={!newEmail.trim()}>Save</button>
     </div>
        )}
 </div>
@@ -45,15 +57,18 @@ function AccountPrefferences() {
 <div>
        <h2>Password</h2>
        <p>*******</p>
-       <button onClick={() => setShowPasswordInput(!showPasswordInput)}>Change Password</button>
+       <button className='btn' onClick={() => setShowPasswordInput(!showPasswordInput)}>Change Password</button>
        {showPasswordInput && (
-        <div>
+        <div style={{
+
+          width: "min-content"}}>
         <input
+        className='account-input'
         type="password"
         value={newPassword}
         onChange={(e) => setNewPassword(e.target.value)}
         placeholder='New password' />
-        <button onClick={handleChangePassword} disabled={!newPassword.trim()}>Save</button>
+        <button className='btn'  onClick={handleChangePassword} disabled={!newPassword.trim()}>Save</button>
     </div>
        )}
 </div>

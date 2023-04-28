@@ -1,19 +1,263 @@
 * {
     list-style: none;
     text-decoration: none;
+    /* overflow: hidden; */
+    font-family: sans-serif;
+}
+
+body {
+    /* box-sizing: border-box; */
+    background-image: linear-gradient(to bottom right, rgba(255, 93, 0, 0.47), rgba(255, 93, 0, 0.23));
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80rem;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.App {
+    position: relative;
+    margin: 0;
+    padding: 0%;
+    outline: 0px;
+    top: 1rem;
+    height: 40rem;
+}
+
+.wrapper::before {
+    content: "";
+    border-bottom: 0.3px solid black;
+    position: absolute;
+    margin: auto;
+    inset: 5.5rem 0 0 2.5rem;
+    bottom: 2rem;
+    width: 53rem;
+}
+
+.wrapper:hover {
+    box-shadow: 11px 13px 21px -12px #000000;
+    transform: scaleZ(0.3);
+    transition: 0.5s;
 }
 
 li {
     margin: auto;
     font-size: 18px;
+    color: grey;
 }
 
-.profileLi {
-    color: red;
+.page {
+    color: grey;
 }
 
-
-/* .account-class:hover {
+.profile-class::before {
+    content: "";
+    position: absolute;
+    left: 8.7%;
+    top: 5.4rem;
     border-bottom: 4px solid black;
+    display: none;
+    width: 3.6rem;
+}
 
-} */
+.profile-class:hover::before {
+    display: block;
+}
+
+.account-class::before {
+    content: "";
+    position: absolute;
+    left: 24%;
+    top: 5.4rem;
+    border-bottom: 4px solid black;
+    display: none;
+    width: 4.5rem;
+}
+
+.account-class:hover::before {
+    display: block;
+}
+
+.safetyAndprivacy-class::before {
+    content: "";
+    position: absolute;
+    left: 41%;
+    top: 5.4rem;
+    border-bottom: 4px solid black;
+    display: none;
+    width: 7.5rem;
+}
+
+.safetyAndprivacy-class:hover::before {
+    display: block;
+}
+
+.feed-class::before {
+    content: "";
+    position: absolute;
+    left: 63.7%;
+    top: 5.4rem;
+    border-bottom: 4px solid black;
+    display: none;
+    width: 6.8rem;
+}
+
+.feed-class:hover::before {
+    display: block;
+}
+
+.notifications-class::before {
+    content: "";
+    position: absolute;
+    left: 84.5%;
+    top: 5.4rem;
+    border-bottom: 4px solid black;
+    display: none;
+    width: 6.5rem;
+}
+
+.notifications-class:hover::before {
+    display: block;
+}
+
+.safetyAndprivacy-class {
+    animation-name: motion;
+    animation-duration: 2s;
+    /* border: 1px solid black; */
+}
+
+
+/* profilr section */
+
+.profile-input {
+    position: relative;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid rgb(159, 159, 159);
+    margin-top: 2px;
+    float: right;
+}
+
+label {
+    margin-top: 4px;
+}
+
+.profile:hover {
+    box-shadow: 11px 13px 21px -12px #000000;
+    transform: scaleZ(0.3);
+    transition: 0.5s;
+}
+
+
+/* languages section */
+
+.beta::after {
+    content: "beta";
+    background-color: #263562;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 19rem;
+    display: flex;
+}
+
+.Languages:hover {
+    box-shadow: 11px 13px 21px -12px #000000;
+    transform: scaleZ(0.3);
+    transition: 0.5s;
+}
+
+.account-input,
+.btn {
+    position: relative;
+    right: 5rem;
+    margin-left: 20rem;
+    top: -4rem;
+    border: 1px solid black;
+    line-height: -4rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    border: none;
+    background: none;
+    background-color: #263562;
+    color: white;
+    padding: 6px;
+    margin-top: -25px;
+    border-radius: 8px;
+}
+
+.btn-Notif {
+    border: none;
+    background: none;
+    background-color: rgb(130, 0, 0);
+    color: white;
+    padding: 6px;
+    margin: 2px;
+    border-radius: 8px;
+}
+
+.account-input {
+    padding: 5px;
+    border-radius: 8px 0 8px 0;
+    /* border: 1px solid rgb(160, 160, 160); */
+}
+
+.AccountPrefferences:hover {
+    box-shadow: 11px 13px 21px -12px #000000;
+    transform: scaleZ(0.3);
+    transition: 0.5s;
+}
+
+.SafetyAndPrivacy-class:hover {
+    box-shadow: 11px 13px 21px -12px #000000;
+    transform: scaleZ(0.3);
+    transition: 0.5s;
+}
+
+.feed:hover {
+    box-shadow: 11px 13px 21px -12px #000000;
+    transform: scaleZ(0.3);
+    transition: 0.5s;
+}
+
+.notification:hover {
+    box-shadow: 11px 13px 21px -12px #000000;
+    transform: scaleZ(0.3);
+    transition: 0.5s;
+}
+
+@keyframes motion {
+    from {
+        left: 4rem;
+        opacity: 0.3;
+    }
+    to {
+        right: 1rem;
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1470px) {
+    .Account {
+        height: auto;
+        border: 1px solid black;
+    }
+    .Languages {
+        margin: auto;
+        position: absolute;
+        top: 10rem;
+    }
+}
+
+@media only screen and (max-width: 532px) {
+    .beta::after {
+        left: 14rem;
+        width: 2rem;
+    }
+}
